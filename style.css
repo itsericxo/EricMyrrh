@@ -43,13 +43,13 @@ body {
 /* 🎯 MANUAL POSITIONS (EDIT THESE) */
 #yes {
   left: 40px;
-  top: 80px;
+  top: 10px;
   animation: pulse 1.4s infinite;
 }
 
 #no {
   left: 220px;
-  top: 80px;
+  top: 10px;
 }
 
 /* Hover bounce */
@@ -70,5 +70,6 @@ body {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+
 
 
