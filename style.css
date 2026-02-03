@@ -1,12 +1,12 @@
 body {
   margin: 0;
   height: 100vh;
-  background: url('bg.jpg') no-repeat center center/cover;
+  background: url('./bg.jpg') no-repeat center center / cover;
   overflow: hidden;
   font-family: Arial, sans-serif;
 }
 
-/* Question screen — perfectly centered */
+/* Question screen - perfectly centered */
 #main {
   position: absolute;
   inset: 0;
@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-/* Result screen — slightly lower */
+/* Result screen - slightly lower */
 #yesScreen {
   position: absolute;
   inset: 0;
@@ -29,6 +29,7 @@ body {
   text-align: center;
 }
 
+/* THIS IS CRITICAL */
 .hidden {
   display: none;
 }
@@ -48,17 +49,16 @@ body {
 /* Hearts */
 .heart {
   position: absolute;
-  color: pink;
   font-size: 20px;
   animation: floatUp 4s linear forwards;
 }
 
 @keyframes floatUp {
-  0% {
+  from {
     transform: translateY(0);
     opacity: 1;
   }
-  100% {
+  to {
     transform: translateY(-600px);
     opacity: 0;
   }
