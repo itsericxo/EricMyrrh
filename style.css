@@ -1,40 +1,73 @@
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   background: url('./bg.jpg') no-repeat center center / cover;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: flex-start;
   font-family: Arial, sans-serif;
 }
 
-/* Main container */
 #container {
-  position: relative;          /* IMPORTANT for runaway button */
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-/* Question / Result image */
 .textImage {
-  max-width: 80%;
+  max-width: 90%;
+  height: auto;
   margin-bottom: 20px;
 }
 
-/* Buttons wrapper */
+/* Buttons container */
 #buttons {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
 }
 
-/* Button images */
+/* YES / NO buttons */
 #buttons img {
-  width: 120px;
-  margin: 10px;
+  width: 180px;
+  max-width: 40vw;
+  margin: 0 20px;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* 🎀 Bounce on hover */
+#buttons img:hover {
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-8px); }
+  60%  { transform: translateY(0); }
+}
+
+/* 💓 Pulse animation for YES */
+#yes {
+  animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* 😨 Panic wiggle for NO */
+#no:hover {
+  animation: wiggle 0.25s infinite;
+}
+
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(3deg); }
+  50%  { transform: rotate(-3deg); }
+  75%  { transform: rotate(3deg); }
+  100% { transform: rotate(0deg); }
 }
