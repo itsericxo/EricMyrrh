@@ -6,20 +6,33 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
+/* Main container */
 #container {
+  position: relative;          /* IMPORTANT for runaway button */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+/* Question / Result image */
 .textImage {
   max-width: 80%;
   margin-bottom: 20px;
 }
 
+/* Buttons wrapper */
+#buttons {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* Button images */
 #buttons img {
   width: 120px;
   margin: 10px;
