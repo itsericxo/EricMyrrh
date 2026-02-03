@@ -2,55 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Will You Be My Valentine 💖</title>
-
-  <!-- Mobile support -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <title>Valentine 💖</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <div id="container">
-    <!-- Question -->
-    <img
-      id="question"
-      src="question.png"
-      class="textImage"
-      alt="Will you be my Valentine?"
-    >
+  <audio id="music" src="love.mp3" loop></audio>
 
-    <!-- Buttons -->
+  <div id="card">
+    <img src="question.png" id="questionImg" />
+
     <div id="buttons">
-      <img
-        id="yes"
-        src="yes.png"
-        alt="Yes"
-      >
-      <img
-        id="no"
-        src="no.png"
-        alt="No"
-      >
+      <img src="yes.png" id="yes" />
+      <img src="no.png" id="no" />
     </div>
 
-    <!-- Result (hidden initially) -->
-    <img
-      id="result"
-      src="result.png"
-      class="textImage"
-      style="display: none;"
-      alt="She said yes!"
-    >
+    <img src="result.png" id="result" />
   </div>
 
-  <!-- Music -->
-  <audio id="music" src="love.mp3"></audio>
-
-  <!-- JavaScript (MUST be last) -->
   <script src="script.js"></script>
-
 </body>
 </html>
