@@ -42,7 +42,7 @@ body {
   position: absolute;
   left: 0;
   top: 10px;
-  width: 100px;
+  width: 250px;
   cursor: pointer;
   animation: pulse 1.5s infinite;
 }
@@ -94,3 +94,4 @@ body {
     width: 90vw;
   }
 }
+
