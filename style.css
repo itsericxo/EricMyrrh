@@ -2,35 +2,17 @@ body {
   margin: 0;
   height: 100vh;
   background: url('./bg.jpg') no-repeat center center / cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  font-family: Arial, sans-serif;
 }
 
-/* Question screen */
-#main {
-  position: absolute;
-  inset: 0;
+#container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-}
-
-/* Result screen */
-#yesScreen {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(40px);
-}
-
-/* THIS IS CRITICAL */
-.hidden {
-  display: none;
 }
 
 .textImage {
@@ -38,26 +20,8 @@ body {
   margin-bottom: 20px;
 }
 
-.buttons img {
+#buttons img {
   width: 120px;
   margin: 10px;
   cursor: pointer;
-}
-
-/* Hearts */
-.heart {
-  position: absolute;
-  font-size: 20px;
-  animation: floatUp 4s linear forwards;
-}
-
-@keyframes floatUp {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-600px);
-    opacity: 0;
-  }
 }
