@@ -1,68 +1,72 @@
 html, body {
+  margin: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden; /* 🚫 no white scroll area */
 }
+
 body {
-  margin: 0;
-  min-height: 100vh;
   background: url('./bg.jpg') no-repeat center center / cover;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   font-family: Arial, sans-serif;
 }
 
+/* Main container */
 #container {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;   /* 👈 IMPORTANT */
+  text-align: center;
 }
 
+/* Question & result images */
 .textImage {
-  max-width: 90%;
+  max-width: 90vw;
   height: auto;
   margin-bottom: 20px;
 }
 
-/* Buttons container */
+/* Buttons wrapper */
 #buttons {
-  position: relative;
-  display: flex;
-  justify-content: center;
+  position: relative;        /* anchor for NO movement */
+  width: 420px;              /* YOU can change this */
+  height: 220px;
+  margin: 0 auto;
 }
 
-/* YES / NO buttons */
-#buttons img {
+/* YES & NO buttons */
+#yes, #no {
+  position: absolute;        /* YOU control position */
   width: 180px;
-  max-width: 40vw;
-  margin: 0 20px;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-/* 🎀 Bounce on hover */
-#buttons img:hover {
-  animation: bounce 0.4s ease;
-}
-
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-8px); }
-  60%  { transform: translateY(0); }
-}
-
-/* 💓 Pulse animation for YES */
+/* 🎯 MANUAL POSITIONS (EDIT THESE) */
 #yes {
+  left: 40px;
+  top: 40px;
   animation: pulse 1.4s infinite;
 }
 
-@keyframes pulse {
-  0%   { transform: scale(1); }
-  50%  { transform: scale(1.08); }
-  100% { transform: scale(1); }
+#no {
+  left: 220px;
+  top: 40px;
 }
 
+/* Hover bounce */
+#yes:hover, #no:hover {
+  animation: bounce 0.4s ease;
+}
 
+/* Bounce */
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+  60% { transform: translateY(0); }
+}
+
+/* Pulse for YES */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
