@@ -6,7 +6,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Question screen - perfectly centered */
+/* Question screen */
 #main {
   position: absolute;
   inset: 0;
@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-/* Result screen - slightly lower */
+/* Result screen */
 #yesScreen {
   position: absolute;
   inset: 0;
@@ -26,7 +26,6 @@ body {
   align-items: center;
   justify-content: center;
   transform: translateY(40px);
-  text-align: center;
 }
 
 /* THIS IS CRITICAL */
@@ -43,7 +42,6 @@ body {
   width: 120px;
   margin: 10px;
   cursor: pointer;
-  position: relative;
 }
 
 /* Hearts */
