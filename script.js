@@ -1,29 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const noBtn = document.getElementById("noBtn");
-  const yesBtn = document.getElementById("yesBtn");
-  const image = document.getElementById("mainImage");
-  const buttons = document.getElementById("buttons");
-  const music = document.getElementById("bgMusic");
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const questionImg = document.getElementById("question");
+const resultImg = document.getElementById("result");
+const music = document.getElementById("music");
 
-  // NO button runs away but stays on screen
-  noBtn.addEventListener("mouseenter", () => {
-    const padding = 20;
+// Make NO run away
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+  const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
 
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
-
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x + "px";
-    noBtn.style.top = y + "px";
-  });
-
-  // YES button click
-  yesBtn.addEventListener("click", () => {
-    image.src = "./result.png";     // swap image
-    buttons.style.display = "none"; // hide buttons
-    music.play();                   // play music
-  });
+  noBtn.style.position = "absolute";
+  noBtn.style.left = `${x}px`;
+  noBtn.style.top = `${y}px`;
 });
+
+// YES click ❤️
+yesBtn.addEventListener("click", () => {
+  questionImg.style.display = "none";
+  document.getElementById("buttons").style.display = "none";
+
+  resultImg.style.display = "block";
+  music.play();
+
+  createHearts();
+});
+
+// Floating hearts 💕
+function createHearts() {
+  for (let i = 0; i < 25; i++) {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-20px";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    heart.style.animation = "floatUp 4s linear forwards";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 4000);
+  }
+}
+
+// Heart animation
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+`;
+document.head.appendChild(style);
