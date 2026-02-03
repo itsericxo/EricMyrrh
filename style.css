@@ -53,7 +53,7 @@ body {
 }
 
 /* Hover bounce */
-#yes:hover, #no:hover {
+#yes:hover {
   animation: bounce 0.4s ease;
 }
 
@@ -70,3 +70,4 @@ body {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+
