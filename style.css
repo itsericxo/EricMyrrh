@@ -1,76 +1,71 @@
-html, body {
+* {
   margin: 0;
-  width: 100%;
-  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: url('./bg.jpg') no-repeat center center / cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
+  height: 100vh;
+  background: url("bg.jpg") center/cover no-repeat;
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
 /* Main container */
-#container {
+#card {
+  position: absolute;
+  top: 55%;              /* move entire block up/down */
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
 
-/* Question & result images */
-.textImage {
-  max-width: 90vw;
-  height: auto;
-  margin-bottom: 20px;
+/* Question image */
+#questionImg {
+  width: 900px;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Buttons wrapper */
+/* Buttons container — ANCHOR for NO movement */
 #buttons {
-  position: relative;        /* anchor for NO movement */
-  width: 420px;              /* YOU can change this */
+  position: relative;
+  margin-top: 25px;      /* distance below "Valentine" */
+  width: 500px;
   height: 220px;
-  margin: 10px auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* YES & NO buttons */
-#yes, #no {
-  position: absolute;        /* YOU control position */
+/* YES button */
+#yes {
+  position: absolute;
+  left: 0;
+  top: 20px;
   width: 180px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  animation: pulse 1.5s infinite;
 }
 
-/* 🎯 MANUAL POSITIONS (EDIT THESE) */
-#yes {
-  left: 40px;
-  top: 10px;
-  animation: pulse 1.4s infinite;
-}
-
+/* NO button */
 #no {
-  left: 220px;
-  top: 10px;
+  position: absolute;
+  right: 0;
+  top: 20px;
+  width: 180px;
+  cursor: pointer;
 }
 
-/* Hover bounce */
-#yes:hover {
-  animation: bounce 0.4s ease;
+/* Result image */
+#result {
+  display: none;
+  width: 800px;
+  margin-top: 40px;
 }
 
-/* Bounce */
-@keyframes bounce {
-  0% { transform: translateY(0); }
-  30% { transform: translateY(-8px); }
-  60% { transform: translateY(0); }
-}
-
-/* Pulse for YES */
+/* YES pulse */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
-
-
-
-
