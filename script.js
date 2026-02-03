@@ -7,16 +7,16 @@ const music = document.getElementById("music");
 // Make NO run away
 const container = document.getElementById("container");
 
-noBtn.addEventListener("mouseenter", () => {
-  const containerRect = container.getBoundingClientRect();
+nnoBtn.addEventListener("mouseenter", () => {
+  const padding = 20;
 
-  const maxX = containerRect.width - noBtn.offsetWidth;
-  const maxY = containerRect.height - noBtn.offsetHeight;
+  const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+  const maxY = window.innerHeight - noBtn.offsetHeight - padding;
 
   const x = Math.random() * maxX;
   const y = Math.random() * maxY;
 
-  noBtn.style.position = "absolute";
+  noBtn.style.position = "fixed";   // 👈 key change
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
 });
@@ -58,4 +58,5 @@ style.innerHTML = `
 }
 `;
 document.head.appendChild(style);
+
 
