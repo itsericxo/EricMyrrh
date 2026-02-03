@@ -5,15 +5,15 @@ const yesScreen = document.getElementById("yesScreen");
 const music = document.getElementById("bgMusic");
 
 // No button runs away
-noBtn.addEventListener("mouseover", () => {
-  const x = Math.random() * (window.innerWidth - 100);
-  const y = Math.random() * (window.innerHeight - 100);
+noBtn.addEventListener("mouseenter", () => {
+  const x = Math.random() * (window.innerWidth - 120);
+  const y = Math.random() * (window.innerHeight - 120);
   noBtn.style.position = "absolute";
   noBtn.style.left = x + "px";
   noBtn.style.top = y + "px";
 });
 
-// Yes button click
+// Yes button
 yesBtn.addEventListener("click", () => {
   main.classList.add("hidden");
   yesScreen.classList.remove("hidden");
@@ -21,7 +21,7 @@ yesBtn.addEventListener("click", () => {
   startHearts();
 });
 
-// Floating hearts
+// Hearts
 function startHearts() {
   setInterval(() => {
     const heart = document.createElement("div");
@@ -29,7 +29,7 @@ function startHearts() {
     heart.innerHTML = "💖";
     heart.style.left = Math.random() * window.innerWidth + "px";
     heart.style.bottom = "0px";
-    document.getElementById("hearts").appendChild(heart);
+    document.body.appendChild(heart);
 
     setTimeout(() => heart.remove(), 4000);
   }, 300);
