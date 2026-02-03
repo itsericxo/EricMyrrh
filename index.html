@@ -3,31 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>Valentine 💖</title>
+
+  <!-- IMPORTANT: relative paths for GitHub Pages -->
   <link rel="stylesheet" href="./style.css">
-<script src="./script.js"></script>
 </head>
 <body>
 
-<div id="main">
-  <img src="question.png" class="textImage" alt="Question">
+  <!-- QUESTION SCREEN -->
+  <div id="main">
+    <img src="./question.png" class="textImage" alt="Will you be my Valentine?">
 
-  <div class="buttons">
-    <img src="yes.png" id="yesBtn" alt="Yes">
-    <img src="no.png" id="noBtn" alt="No">
+    <div class="buttons">
+      <img src="./yes.png" id="yesBtn" alt="Yes">
+      <img src="./no.png" id="noBtn" alt="No">
+    </div>
   </div>
-</div>
 
-<div id="yesScreen" class="hidden">
-  <img src="result.png" class="textImage" alt="Result">
-</div>
+  <!-- RESULT SCREEN -->
+  <div id="yesScreen" class="hidden">
+    <img src="./result.png" class="textImage" alt="She said yes 💖">
+  </div>
 
-<div id="hearts"></div>
+  <!-- HEARTS CONTAINER -->
+  <div id="hearts"></div>
 
-<audio id="bgMusic" loop>
-  <source src="love.mp3" type="audio/mpeg">
-</audio>
+  <!-- MUSIC -->
+  <audio id="bgMusic" loop>
+    <source src="./love.mp3" type="audio/mpeg">
+  </audio>
 
-<script src="script.js"></script>
+  <!-- IMPORTANT: relative path -->
+  <script src="./script.js"></script>
+
 </body>
 </html>
-
