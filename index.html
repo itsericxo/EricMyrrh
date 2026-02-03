@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Valentine 💖</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine? 💖</title>
+
+  <!-- Mobile friendly -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div id="container">
-    <img id="mainImage" src="./question.png" class="textImage">
+    <!-- Question Image -->
+    <img
+      id="question"
+      src="question.png"
+      class="textImage"
+      alt="Will you be my Valentine?"
+    >
 
+    <!-- Buttons -->
     <div id="buttons">
-      <img src="./yes.png" id="yesBtn">
-      <img src="./no.png" id="noBtn">
+      <img
+        id="yes"
+        src="yes.png"
+        alt="Yes button"
+      >
+      <img
+        id="no"
+        src="no.png"
+        alt="No button"
+      >
     </div>
+
+    <!-- Result Image (hidden initially) -->
+    <img
+      id="result"
+      src="result.png"
+      class="textImage"
+      style="display: none;"
+      alt="She said yes!"
+    >
   </div>
 
-  <audio id="bgMusic" loop>
-    <source src="./love.mp3" type="audio/mpeg">
-  </audio>
+  <!-- Music -->
+  <audio id="music" src="love.mp3"></audio>
 
-  <script src="./script.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
