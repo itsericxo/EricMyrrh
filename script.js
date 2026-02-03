@@ -5,15 +5,21 @@ const resultImg = document.getElementById("result");
 const music = document.getElementById("music");
 
 // Make NO run away
+const container = document.getElementById("container");
+
 noBtn.addEventListener("mouseenter", () => {
-  const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
-  const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+  const containerRect = container.getBoundingClientRect();
+
+  const maxX = containerRect.width - noBtn.offsetWidth;
+  const maxY = containerRect.height - noBtn.offsetHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
 
   noBtn.style.position = "absolute";
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
 });
-
 // YES click ❤️
 yesBtn.addEventListener("click", () => {
   questionImg.style.display = "none";
@@ -52,3 +58,4 @@ style.innerHTML = `
 }
 `;
 document.head.appendChild(style);
+
