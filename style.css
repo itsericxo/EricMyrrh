@@ -29,7 +29,7 @@ body {
   position: relative;        /* anchor for NO movement */
   width: 420px;              /* YOU can change this */
   height: 220px;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 /* YES & NO buttons */
@@ -70,6 +70,7 @@ body {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+
 
 
 
