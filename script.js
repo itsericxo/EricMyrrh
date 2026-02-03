@@ -3,31 +3,25 @@ window.addEventListener("DOMContentLoaded", () => {
   const yesBtn = document.getElementById("yes");
   const questionImg = document.getElementById("question");
   const resultImg = document.getElementById("result");
-  const music = document.getElementById("music");
   const buttons = document.getElementById("buttons");
+  const music = document.getElementById("music");
 
-  if (!noBtn || !yesBtn) {
-    console.error("YES or NO button not found");
-    return;
-  }
+  /* Store original NO position */
+  const baseX = noBtn.offsetLeft;
+  const baseY = noBtn.offsetTop;
 
-  // NO runs away
+  /* NO moves slightly but stays nearby */
   noBtn.addEventListener("mouseenter", () => {
-    const padding = 40;
+    const range = 60; // how far NO can dodge (px)
 
-    const maxX = window.innerWidth - noBtn.offsetWidth - padding;
-    const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+    const offsetX = Math.random() * range * 2 - range;
+    const offsetY = Math.random() * range * 2 - range;
 
-    const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
-
-    noBtn.style.position = "absolute";
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
-    noBtn.style.zIndex = "20";
+    noBtn.style.left = `${baseX + offsetX}px`;
+    noBtn.style.top = `${baseY + offsetY}px`;
   });
 
-  // YES click
+  /* YES click */
   yesBtn.addEventListener("click", () => {
     questionImg.style.display = "none";
     buttons.style.display = "none";
@@ -37,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     createHearts();
   });
 
+  /* Floating hearts */
   function createHearts() {
     for (let i = 0; i < 25; i++) {
       const heart = document.createElement("div");
