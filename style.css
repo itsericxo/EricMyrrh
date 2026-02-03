@@ -31,7 +31,7 @@ body {
 #buttons {
   position: relative;
   margin-top: 25px;      /* distance below "Valentine" */
-  width: 400px;
+  width: 500px;
   height: 220px;
   margin-left: auto;
   margin-right: auto;
@@ -42,7 +42,7 @@ body {
   position: absolute;
   left: 0;
   top: 10px;
-  width: 200px;
+  width: 100px;
   cursor: pointer;
   animation: pulse 1.5s infinite;
 }
@@ -52,7 +52,7 @@ body {
   position: absolute;
   right: 0;
   top: 10px;
-  width: 200px;
+  width: 100px;
   cursor: pointer;
 }
 
@@ -69,14 +69,28 @@ body {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+@media (max-width: 768px) {
 
+  #card {
+    top: 50%;
+  }
 
+  #questionImg {
+    width: 90vw;   /* scale to screen width */
+  }
 
+  #buttons {
+    width: 90vw;
+    height: 200px;
+    margin-top: 20px;
+  }
 
+  #yes, #no {
+    width: 35vw;   /* responsive buttons */
+    max-width: 160px;
+  }
 
-
-
-
-
-
-
+  #result {
+    width: 90vw;
+  }
+}
