@@ -41,7 +41,7 @@ body {
 #yes {
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 10px;
   width: 180px;
   cursor: pointer;
   animation: pulse 1.5s infinite;
@@ -51,7 +51,7 @@ body {
 #no {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 10px;
   width: 180px;
   cursor: pointer;
 }
@@ -69,3 +69,4 @@ body {
   50% { transform: scale(1.08); }
   100% { transform: scale(1); }
 }
+
