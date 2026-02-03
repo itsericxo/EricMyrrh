@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: url('bg.jpg') no-repeat center center/cover;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Question screen — perfectly centered */
+#main {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Result screen — slightly lower */
+#yesScreen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(40px);
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.textImage {
+  max-width: 80%;
+  margin-bottom: 20px;
+}
+
+.buttons img {
+  width: 120px;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hearts */
+.heart {
+  position: absolute;
+  color: pink;
+  font-size: 20px;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+}
