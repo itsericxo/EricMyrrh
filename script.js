@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   /* NO moves slightly but stays nearby */
   noBtn.addEventListener("mouseenter", () => {
-    const range = 60; // how far NO can dodge (px)
+    const range = 160; // how far NO can dodge (px)
 
     const offsetX = Math.random() * range * 2 - range;
     const offsetY = Math.random() * range * 2 - range;
@@ -58,3 +58,4 @@ window.addEventListener("DOMContentLoaded", () => {
   `;
   document.head.appendChild(style);
 });
+
