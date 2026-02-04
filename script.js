@@ -39,7 +39,7 @@ yes.addEventListener("click", () => {
 });
 
 // NO hover — move around
-no.addEventListener("mouseenter", () => {
+function moveNoButton() {
   const maxX = buttons.clientWidth - no.clientWidth;
   const maxY = buttons.clientHeight - no.clientHeight;
 
@@ -48,4 +48,21 @@ no.addEventListener("mouseenter", () => {
 
   no.style.left = `${x}px`;
   no.style.top = `${y}px`;
+}
+
+// Desktop hover
+no.addEventListener("mouseenter", moveNoButton);
+
+// Mobile touch
+no.addEventListener("touchstart", (e) => {
+  e.preventDefault(); // stop accidental click
+  moveNoButton();
 });
+
+// Extra safety: click fallback
+no.addEventListener("click", (e) => {
+  e.preventDefault();
+  moveNoButton();
+});
+
+
