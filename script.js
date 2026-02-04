@@ -11,10 +11,12 @@ function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
 
-  const size = Math.random() * 20 + 20;
-  heart.style.width = `${size}px`;
-  heart.style.height = `${size}px`;
+  // Random heart emojis
+  const hearts = ["❤️", "💖", "💕", "💘", "💝"];
+  heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
   heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 20 + "px";
 
   document.body.appendChild(heart);
 
@@ -47,3 +49,4 @@ no.addEventListener("mouseenter", () => {
   no.style.left = `${x}px`;
   no.style.top = `${y}px`;
 });
+
