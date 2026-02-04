@@ -14,7 +14,7 @@ body {
 /* Main container */
 #card {
   position: absolute;
-  top: 55%;              /* move entire block up/down */
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -27,10 +27,10 @@ body {
   margin: 0 auto;
 }
 
-/* Buttons container — ANCHOR for NO movement */
+/* Buttons container */
 #buttons {
   position: relative;
-  margin-top: 25px;      /* distance below "Valentine" */
+  margin-top: 25px;
   width: 500px;
   height: 220px;
   margin-left: auto;
@@ -56,27 +56,59 @@ body {
   cursor: pointer;
 }
 
+/* Yay image (NEW) */
+#yayImg {
+  display: none;
+  width: 450px;
+  margin: 0 auto 20px;
+  animation: pulse 1.3s infinite;
+}
+
 /* Result image */
 #result {
   display: none;
-  width: 500px;
-  margin-top: 40px;
+  width: 800px;
+  margin-top: 20px;
 }
 
-/* YES pulse */
+/* Pulse animation */
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+  50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
-@media (max-width: 768px) {
 
+/* Hearts */
+.heart {
+  position: fixed;
+  bottom: -40px;
+  background-image: url("heart.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 999;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   #card {
     top: 50%;
   }
 
   #questionImg {
-    width: 90vw;   /* scale to screen width */
+    width: 90vw;
   }
 
   #buttons {
@@ -86,14 +118,15 @@ body {
   }
 
   #yes, #no {
-    width: 35vw;   /* responsive buttons */
+    width: 35vw;
     max-width: 160px;
+  }
+
+  #yayImg {
+    width: 70vw;
   }
 
   #result {
     width: 90vw;
   }
 }
-
-
-
