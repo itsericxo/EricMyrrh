@@ -35,7 +35,9 @@ yes.addEventListener("click", () => {
 
   music.play();
 
-  setInterval(createHeart, 300);
+  if (!heartInterval) {
+    heartInterval = setInterval(createHeart, 300);
+  }
 });
 
 // NO hover — move inside container
@@ -49,4 +51,5 @@ no.addEventListener("mouseenter", () => {
   no.style.left = `${x}px`;
   no.style.top = `${y}px`;
 });
+
 
