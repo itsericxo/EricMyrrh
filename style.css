@@ -59,9 +59,10 @@ body {
 /* Yay image (NEW) */
 #yayImg {
   display: none;
-  width: 450px;
+  width: 300px;              /* smaller = pulse is noticeable */
   margin: 0 auto 20px;
-  animation: pulse 1.3s infinite;
+  animation: pulse 1.2s infinite;
+  z-index: 10;
 }
 
 #result {
@@ -72,9 +73,15 @@ body {
 
 /* Pulse animation */
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Hearts */
@@ -126,6 +133,7 @@ body {
     width: 90vw;
   }
 }
+
 
 
 
