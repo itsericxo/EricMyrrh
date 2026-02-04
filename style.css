@@ -80,12 +80,9 @@ body {
 /* Hearts */
 .heart {
   position: fixed;
-  bottom: -40px;
-  background-image: url("heart.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  bottom: -30px;
   pointer-events: none;
-  z-index: 999;
+  z-index: 9999;
   animation: floatUp 4s linear forwards;
 }
 
@@ -129,4 +126,5 @@ body {
     width: 90vw;
   }
 }
+
 
