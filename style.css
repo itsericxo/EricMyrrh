@@ -59,7 +59,7 @@ body {
 /* Result image */
 #result {
   display: none;
-  width: 800px;
+  width: 500px;
   margin-top: 40px;
 }
 
@@ -94,5 +94,6 @@ body {
     width: 90vw;
   }
 }
+
 
 
