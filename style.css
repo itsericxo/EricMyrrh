@@ -56,49 +56,36 @@ body {
   cursor: pointer;
 }
 
-/* Yay image (NEW) */
-#yayImg {
-  display: none;
-  width: 300px;              /* smaller = pulse is noticeable */
-  margin: 0 auto 20px;
-  animation: pulse 1.2s infinite;
-  z-index: 10;
-}
-
+/* Result image */
 #result {
   display: none;
-  width: 500px;
-  margin: 0 auto;
+  width: 800px;
+  margin: 40px auto 0;
 }
 
 /* Pulse animation */
 @keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.18);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
-/* Hearts */
+/* Emoji hearts */
 .heart {
   position: fixed;
   bottom: -30px;
   pointer-events: none;
-  z-index: 99999;   /* 🔥 VERY HIGH */
+  z-index: 99999;
   animation: floatUp 4s linear forwards;
 }
+
 @keyframes floatUp {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
     opacity: 1;
   }
   100% {
-    transform: translateY(-110vh) rotate(360deg);
+    transform: translateY(-110vh);
     opacity: 0;
   }
 }
@@ -124,16 +111,7 @@ body {
     max-width: 160px;
   }
 
-  #yayImg {
-    width: 70vw;
-  }
-
   #result {
     width: 90vw;
   }
 }
-
-
-
-
-
