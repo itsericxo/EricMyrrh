@@ -1,19 +1,42 @@
 const yes = document.getElementById("yes");
 const no = document.getElementById("no");
 const result = document.getElementById("result");
+const yayImg = document.getElementById("yayImg");
 const question = document.getElementById("questionImg");
 const buttons = document.getElementById("buttons");
 const music = document.getElementById("music");
+
+// Create hearts
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+
+  const size = Math.random() * 20 + 20;
+  heart.style.width = `${size}px`;
+  heart.style.height = `${size}px`;
+  heart.style.left = Math.random() * 100 + "vw";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 4000);
+}
 
 // YES click
 yes.addEventListener("click", () => {
   question.style.display = "none";
   buttons.style.display = "none";
+
+  yayImg.style.display = "block";
   result.style.display = "block";
+
   music.play();
+
+  setInterval(createHeart, 300);
 });
 
-// NO hover — move around but stay visible
+// NO hover — move inside container
 no.addEventListener("mouseenter", () => {
   const maxX = buttons.clientWidth - no.clientWidth;
   const maxY = buttons.clientHeight - no.clientHeight;
